@@ -25,8 +25,8 @@ var CANVAS_EVENTS = {
 };
 
 var WEBXR_EVENTS = {
-  DOWN: ['selectstart'],
-  UP: ['selectend']
+  DOWN: ['touchstart'],
+  UP: ['touchend']
 };
 
 var CANVAS_HOVER_CLASS = 'a-mouse-cursor-hover';
@@ -319,16 +319,18 @@ module.exports.Component = registerComponent('cursor', {
   },
 
   onEnterVR: function () {
+    var el = this.el;
+
     this.clearCurrentIntersection(true);
     var xrSession = this.el.sceneEl.xrSession;
     var self = this;
     if (!xrSession) { return; }
     if (this.data.rayOrigin === 'mouse') { return; }
     WEBXR_EVENTS.DOWN.forEach(function (downEvent) {
-      xrSession.addEventListener(downEvent, self.onCursorDown);
+      el.addEventListener(downEvent, self.onCursorDown);
     });
     WEBXR_EVENTS.UP.forEach(function (upEvent) {
-      xrSession.addEventListener(upEvent, self.onCursorUp);
+      el.addEventListener(upEvent, self.onCursorUp);
     });
   },
 
