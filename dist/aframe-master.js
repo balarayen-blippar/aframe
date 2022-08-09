@@ -55400,8 +55400,8 @@ var CANVAS_EVENTS = {
 };
 
 var WEBXR_EVENTS = {
-  DOWN: ['touchstart'],
-  UP: ['touchend']
+  DOWN: ['triggertouchstart'],
+  UP: ['triggertouchend']
 };
 
 var CANVAS_HOVER_CLASS = 'a-mouse-cursor-hover';
@@ -59263,7 +59263,7 @@ module.exports.Component = registerComponent('magicleap-controls', {
     if (!button) { return; }
     if (button === 'trigger') {
       analogValue = evt.detail.state.value;
-      console.log('AFRAME: analog value of trigger press: ' + analogValue);
+      console.log('analog value of trigger press: ' + analogValue);
     }
 
     // Pass along changed event with button state, using button mapping for convenience.
@@ -70509,7 +70509,7 @@ _dereq_('./core/a-mixin');
 _dereq_('./extras/components/');
 _dereq_('./extras/primitives/');
 
-console.log('A-Frame Version: 1.2.0 (Date 2022-08-08, Commit #303e9de6)');
+console.log('A-Frame Version: 1.2.0 (Date 2022-08-09, Commit #f0b54c0a)');
 console.log('THREE Version (https://github.com/supermedium/three.js):',
             pkg.dependencies['super-three']);
 console.log('WebVR Polyfill Version:', pkg.dependencies['webvr-polyfill']);

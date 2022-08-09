@@ -25,8 +25,8 @@ var CANVAS_EVENTS = {
 };
 
 var WEBXR_EVENTS = {
-  DOWN: ['touchstart'],
-  UP: ['touchend']
+  DOWN: ['triggertouchstart'],
+  UP: ['triggertouchend']
 };
 
 var CANVAS_HOVER_CLASS = 'a-mouse-cursor-hover';
